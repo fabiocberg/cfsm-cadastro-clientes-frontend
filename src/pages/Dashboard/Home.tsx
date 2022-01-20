@@ -38,7 +38,7 @@ export default function Home() {
   const [searchTerm, setSearchTerm] = useState("");
 
   const updateList = () => {
-    fetch("http://localhost:3001/v1/customers", {
+    fetch("https://cadastro-clientes-backend.herokuapp.com/v1/customers", {
       headers: {
         "Content-Type": "application/json",
         Authorization: `Bearer ${localStorage.getItem("token")}`,
@@ -79,13 +79,16 @@ export default function Home() {
     const formData = new FormData();
     formData.append("file", file);
     formData.append("id", id.toString());
-    fetch("http://localhost:3001/v1/customers/profile-picture", {
-      headers: {
-        Authorization: `Bearer ${localStorage.getItem("token")}`,
-      },
-      method: "POST",
-      body: formData,
-    })
+    fetch(
+      "https://cadastro-clientes-backend.herokuapp.com/v1/customers/profile-picture",
+      {
+        headers: {
+          Authorization: `Bearer ${localStorage.getItem("token")}`,
+        },
+        method: "POST",
+        body: formData,
+      }
+    )
       .then(async (response) => {
         const json = await response.json();
         if (response.ok) {
@@ -103,7 +106,7 @@ export default function Home() {
     if (method === "PUT") {
       data.id = editingCustomer?.id;
     }
-    fetch("http://localhost:3001/v1/customers", {
+    fetch("https://cadastro-clientes-backend.herokuapp.com/v1/customers", {
       headers: {
         "Content-Type": "application/json",
         Authorization: `Bearer ${localStorage.getItem("token")}`,
@@ -147,7 +150,7 @@ export default function Home() {
   }, [navigate]);
 
   useEffect(() => {
-    fetch("http://localhost:3001/v1/users/me", {
+    fetch("https://cadastro-clientes-backend.herokuapp.com/v1/users/me", {
       headers: {
         "Content-Type": "application/json",
         Authorization: `Bearer ${localStorage.getItem("token")}`,

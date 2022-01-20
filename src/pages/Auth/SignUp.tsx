@@ -47,7 +47,7 @@ export default function SignUp() {
       return;
     }
     delete data["passwordConfirm"];
-    fetch("http://localhost:3001/v1/sign-up", {
+    fetch("https://cadastro-clientes-backend.herokuapp.com/v1/sign-up", {
       headers: {
         "Content-Type": "application/json",
       },

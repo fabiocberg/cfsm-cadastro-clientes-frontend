@@ -34,7 +34,7 @@ export default function SignIn() {
     // requisição para o backend
     // em caso de sucesso, ir para a rota home
     setErrorMessage("");
-    fetch("http://localhost:3001/v1/sign-in", {
+    fetch("https://cadastro-clientes-backend.herokuapp.com/v1/sign-in", {
       headers: {
         "Content-Type": "application/json",
       },

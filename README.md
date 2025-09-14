@@ -1,46 +1,85 @@
-# Getting Started with Create React App
+# cfsm-cadastro-clientes-frontend
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+## Descrição
 
-## Available Scripts
+O `cfsm-cadastro-clientes-frontend` é uma aplicação web desenvolvida em React, responsável pela interface de gerenciamento do cadastro de clientes. O sistema comunica-se com a API backend para autenticação, consulta, cadastro, edição e exclusão de clientes, proporcionando uma experiência de usuário moderna, responsiva e segura.
 
-In the project directory, you can run:
+## Arquitetura
 
-### `yarn start`
+- **Linguagem:** JavaScript (React)
+- **Framework/Biblioteca:** [Create React App](https://github.com/facebook/create-react-app)
+- **Gerenciador de estado:** (Ex: Redux, Context API) *(Atualize conforme o projeto)*
+- **Componentização:** (Ex: Material UI, Ant Design, Styled Components) *(Atualize conforme o projeto)*
+- **Comunicação com API:** Axios ou Fetch API
+- **Controle de rotas:** React Router
+- **Testes:** (Ex: Jest, React Testing Library) *(Atualize conforme o projeto)*
+- **Outros:** (Ex: ESLint, Prettier, Docker) *(Atualize conforme o projeto)*
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+## Estrutura de Pastas Sugerida
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+```
+src/
+├── api/            # Serviços de integração com o backend
+├── components/     # Componentes reutilizáveis de UI
+├── pages/          # Páginas da aplicação
+├── hooks/          # Custom hooks
+├── contexts/       # Contextos globais (ex: autenticação)
+├── utils/          # Funções utilitárias
+├── assets/         # Imagens, ícones, etc.
+└── App.js
+```
 
-### `yarn test`
+## Como rodar localmente
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+1. **Pré-requisitos**
+   - Node.js v18+ instalado
+   - npm ou yarn
 
-### `yarn build`
+2. **Instalação**
+   ```bash
+   npm install
+   # ou
+   yarn install
+   ```
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+3. **Configuração**
+   - Crie um arquivo `.env` na raiz do projeto, por exemplo:
+     ```
+     REACT_APP_API_URL=http://localhost:3000
+     ```
+   - Ajuste conforme o endereço da API backend e outras variáveis sensíveis necessárias.
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+4. **Execução do projeto**
+   ```bash
+   npm start
+   # ou
+   yarn start
+   ```
+   Acesse [http://localhost:3000](http://localhost:3000) no navegador.
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+5. **Execução dos testes**
+   ```bash
+   npm test
+   # ou
+   yarn test
+   ```
 
-### `yarn eject`
+## Build para produção
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+```bash
+npm run build
+# ou
+yarn build
+```
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+Os arquivos otimizados estarão na pasta `build/`, prontos para deploy em serviços como Vercel, Netlify, AWS S3, etc.
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+## Observações
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+- Certifique-se de que o backend esteja em execução e a URL configurada corretamente no `.env`.
+- Para personalização de tema ou internacionalização, consulte o diretório `src/` e a documentação das bibliotecas utilizadas.
+- Para dúvidas ou sugestões, contribua via Pull Requests ou Issues.
 
-## Learn More
+---
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
+> **Nota:** Este projeto segue boas práticas de desenvolvimento React. Para contribuições, consulte o guia de contribuição (CONTRIBUTING.md) se disponível.
